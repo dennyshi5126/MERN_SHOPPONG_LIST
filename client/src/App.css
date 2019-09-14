@@ -1,0 +1,21 @@
+.remove-btn{
+    margin-right: 2rem;
+}
+
+.faded-enter{
+    opacity: 0.01;
+}
+
+.faded-enter-active{
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+.faded-exit{
+    opacity: 1;
+}
+
+.faded-exit-active{
+    opacity: 0.01;
+    transition: opacity 1000ms ease-in;
+}
