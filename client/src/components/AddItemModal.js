@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "uuid";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { add_item } from "../actions/itemActions";
 import { connect } from "react-redux";
@@ -25,7 +24,7 @@ class AddItemModal extends React.Component {
 
   confirmName = () => {
     if (this.state.name) {
-      this.props.add_item({ id: uuid(), name: this.state.name });
+      this.props.add_item({ name: this.state.name });
       this.toggle();
     }
   };

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Container, Button, ListGroup, ListGroupItem } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import uuid from "uuid";
 import { connect } from "react-redux";
 import { get_items, delete_item, add_item } from "../actions/itemActions";
 import AddItemModal from "./AddItemModal";
@@ -31,14 +30,14 @@ class ShoppingList extends Component {
         <AddItemModal />
         <ListGroup>
           <TransitionGroup>
-            {items.map(({ id, name }) => (
-              <CSSTransition key={id} timeout={500} className="faded">
+            {items.map(({ _id, name }) => (
+              <CSSTransition key={_id} timeout={500} className="faded">
                 <ListGroupItem>
                   <Button
                     className="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={() => this.props.delete_item(id)}
+                    onClick={() => this.props.delete_item(_id)}
                   >
                     &times;
                   </Button>
